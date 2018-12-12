@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-cli": "^1.1.1",
+    "next": "^7.0.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-styled-flexboxgrid": "^3.0.0",
+    "styled-components": "^4.1.2",
+    "webpack-bundle-analyzer": "^3.0.3"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
