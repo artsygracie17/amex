@@ -4,25 +4,27 @@ import styled from 'styled-components'
 import React from 'react'
 
 const colors = {
-    lightCoffee: '#cfc6bd',
+    lightCoffee: '#dfd9d3',
     coffee: '#bfb3a8',
     darkCoffee: '#907a67'
 }
 const ResultCardContainer = styled.div`
-    width: 15rem;
-    height: 15rem;
+    width: 10rem;
+    height: 10rem;
     margin: 2rem;
 `
 const ResultCardBody = styled.div`
-    background-color: ${colors.lightCoffee};
+    border: 1px solid lightgray;
     border-radius: 0.2rem;
-    padding: 3rem;
-    position: absolute;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
 `
 
 const Title = styled.h4`
     color: gray;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
 `
 
@@ -33,12 +35,22 @@ const ReleaseDate = styled(Title)`
 export default class ResultCard extends React.Component {
 
     render () {
-        const { film, characterName } = this.props
+        const { film } = this.props
+        const months = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+        ];
+        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        const date = new Date(film.release_date)
+        const year = date.getFullYear()
+        const day = date.getDate()
+        const month = months[date.getMonth()]
+        const dayOfWeek = daysOfWeek[date.getDay()]
+        const dateString = `${dayOfWeek}, ${month} ${day} ${year}`
         return (
             <ResultCardContainer>
                 <ResultCardBody> 
-                    <Title> Test Title </Title>
-                    <ReleaseDate> Test Release Date</ReleaseDate>
+                    <Title> {film.title} </Title>
+                    <ReleaseDate> {dateString} </ReleaseDate>
                 </ResultCardBody>
             </ResultCardContainer>
         )

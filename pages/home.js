@@ -8,6 +8,7 @@ import data from '../characters.json'
 import ResultCard from '../components/ResultCard'
 
 const colors = {
+    lightCoffee: '#dfd9d3',
     coffee: '#bfb3a8',
     darkCoffee: '#907a67'
 }
@@ -17,10 +18,11 @@ const Container = styled.div`
 `
 
 const CharacterCard = styled.div`
-    border: 1px solid ${colors.coffee};
+    background-color: ${colors.coffee};
     border-radius: 10rem;
     height: 5rem;
     margin-top: 2rem;
+    opacity: 0.8;
     padding: 2rem;
     text-align: center;
     vertical-align: middle;
@@ -29,16 +31,18 @@ const CharacterCard = styled.div`
     &:hover {
         color: ${colors.darkCoffee};
         cursor: pointer;
+        opacity: 1;
     }
 `
 
 const Name = styled.p`
-    color: ${colors.coffee};
+    color: gray;
     font-size: 1.2rem;
     margin-top: 1.2rem;
+    opacity: 1;
 
     ${CharacterCard}:hover & {
-        color: ${colors.darkCoffee};
+        color: gray;
     }
 `
 
@@ -84,6 +88,7 @@ export default class Home extends Component {
     render () {
         // console.log('data: ', data.characters)
         const { handleCharacterCardClick } = this
+        const { films } = this.state
         return (
             <Container>
                 <Theme>
@@ -104,11 +109,12 @@ export default class Home extends Component {
                         </Col>
                         <Col xs={9}>
                             <Row>
-                                { data.characters.map((char, i) => {
+                                { films.map((film, i) => {
                                     return (
                                         <Col key={i}>
-                                            <ResultCard/>
-                                                
+                                            <ResultCard
+                                                film={film}
+                                            />
                                         </Col>
                                     )
                                 })}
