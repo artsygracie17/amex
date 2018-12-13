@@ -12,6 +12,7 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
+    font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
 `
@@ -41,15 +42,17 @@ export default class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            films: [],
             selectedCharacter: '',
-            films: []
+            status: 'SETTLED'
         }
     }
 
     handleCharacterNameClick = (name, reqUrl) => {
         this.setState({
             films: [],
-            selectedCharacter: name
+            selectedCharacter: name,
+            status: 'PENDING'
         })
         this.fetchFilms(reqUrl)
         
@@ -65,7 +68,8 @@ export default class Home extends Component {
                 .then(res => res.json())
                 .then(filmData => {
                     this.setState({
-                        films: [...this.state.films, filmData]
+                        films: [...this.state.films, filmData],
+                        status: 'SETTLED'
                     })
                 })
             })
@@ -75,7 +79,7 @@ export default class Home extends Component {
     render () {
         // console.log('data: ', data.characters)
         const { handleCharacterNameClick } = this
-        const { films } = this.state
+        const { films, status, selectedCharacter } = this.state
         return (
             <Container>
                 <Theme>
@@ -85,7 +89,7 @@ export default class Home extends Component {
                         return (
                             <Col key={i} xs={12} sm={6} md={3}>
                                 <Name 
-                                    isCurrentCharacter={char.name===this.state.selectedCharacter}
+                                    isCurrentCharacter={char.name===selectedCharacter}
                                     onClick={() => handleCharacterNameClick(char.name, char.url)}>
                                     {char.name} 
                                 </Name>    
@@ -95,7 +99,7 @@ export default class Home extends Component {
                     </Row>
                     <Row start='xs'>
                         <Col xsOffset={1}>
-                        { films.map((film, i) => {
+                        { films && status==='SETTLED' && films.map((film, i) => {
                             return (
                                 <Row>
                                     <Col key={i}>

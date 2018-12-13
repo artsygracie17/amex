@@ -143,7 +143,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    font-size: 0.8rem;\n    margin-left: 0.3rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-size: 0.8rem;\n    margin-left: 0.4rem;\n    margin-bottom: 0rem;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -153,7 +153,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    color: black;\n    font-size: 2rem;\n    font-weight: lighter;\n    margin-top: 1rem;\n    margin-bottom: 0rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n    color: black;\n    font-size: 1.3rem;\n    font-weight: lighter;\n    margin-top: 0.5rem;\n    margin-bottom: 0rem;\n    margin-left: 0.3rem;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -163,7 +163,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    color: black;\n    margin-top: 0.8rem;\n    margin-right: 0.3rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n    color: black;\n    margin-top: 0.5rem;\n    margin-right: 0.3rem;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -173,7 +173,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    border-bottom: 1px solid lightgray;\n    border-radius: 0.2rem;\n    padding: 1.5rem;\n    width: 100%;\n    height: 100%;\n    vertical-align: middle;\n"]);
+  var data = _taggedTemplateLiteral(["\n    border-bottom: 1px solid lightgray;\n    border-radius: 0.2rem;\n    padding: 1rem;\n    width: 100%;\n    height: 100%;\n    vertical-align: middle;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -183,7 +183,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    width: 30rem;\n    height: 5rem;\n    margin: 2rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 30rem;\n    height: 3rem;\n    margin: 2rem;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -236,7 +236,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ResultCardContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 62
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
@@ -244,65 +244,65 @@ function (_React$Component) {
         rel: "stylesheet",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 63
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ResultCardBody, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 63
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(IconCol, {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 64
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("i", {
-        class: "material-icons",
-        style: {
-          fontSize: 40
-        },
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 65
         },
         __self: this
-      }, "movie")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(IconCol, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("i", {
+        class: "material-icons",
+        style: {
+          fontSize: 24
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 67
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Title, {
+      }, "movie")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Col"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 69
         },
         __self: this
-      }, " ", film.title, " ")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 71
         },
         __self: this
+      }, " ", film.title, " ")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
       }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ReleaseDate, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 74
         },
         __self: this
       }, " Release: ", dateString, " "))))));
@@ -400,7 +400,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    margin-bottom: 2rem;\n    text-align: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-size: 2.5rem;\n    margin-bottom: 2rem;\n    text-align: center;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -453,15 +453,17 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleCharacterNameClick", function (name, reqUrl) {
       _this.setState({
         films: [],
-        selectedCharacter: name
+        selectedCharacter: name,
+        status: 'PENDING'
       });
 
       _this.fetchFilms(reqUrl);
     });
 
     _this.state = {
+      films: [],
       selectedCharacter: '',
-      films: []
+      status: 'SETTLED'
     };
     return _this;
   }
@@ -487,7 +489,8 @@ function (_Component) {
                       return res.json();
                     }).then(function (filmData) {
                       _this2.setState({
-                        films: _toConsumableArray(_this2.state.films).concat([filmData])
+                        films: _toConsumableArray(_this2.state.films).concat([filmData]),
+                        status: 'SETTLED'
                       });
                     });
                   });
@@ -510,34 +513,35 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
-
       // console.log('data: ', data.characters)
       var handleCharacterNameClick = this.handleCharacterNameClick;
-      var films = this.state.films;
+      var _this$state = this.state,
+          films = _this$state.films,
+          status = _this$state.status,
+          selectedCharacter = _this$state.selectedCharacter;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 84
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Theme, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 86
         },
         __self: this
       }, " characters and films "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
         start: "xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 87
         },
         __self: this
       }, _characters_json__WEBPACK_IMPORTED_MODULE_4__.characters.map(function (char, i) {
@@ -548,17 +552,17 @@ function (_Component) {
           md: 3,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 86
+            lineNumber: 90
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Name, {
-          isCurrentCharacter: char.name === _this3.state.selectedCharacter,
+          isCurrentCharacter: char.name === selectedCharacter,
           onClick: function onClick() {
             return handleCharacterNameClick(char.name, char.url);
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 87
+            lineNumber: 91
           },
           __self: this
         }, char.name));
@@ -566,35 +570,35 @@ function (_Component) {
         start: "xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 100
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         xsOffset: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 101
         },
         __self: this
-      }, films.map(function (film, i) {
+      }, films && status === 'SETTLED' && films.map(function (film, i) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 100
+            lineNumber: 104
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
           key: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 101
+            lineNumber: 105
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_ResultCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
           film: film,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 102
+            lineNumber: 106
           },
           __self: this
         })));

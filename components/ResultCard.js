@@ -11,13 +11,13 @@ const colors = {
 }
 const ResultCardContainer = styled.div`
     width: 30rem;
-    height: 5rem;
+    height: 3rem;
     margin: 2rem;
 `
 const ResultCardBody = styled.div`
     border-bottom: 1px solid lightgray;
     border-radius: 0.2rem;
-    padding: 1.5rem;
+    padding: 1rem;
     width: 100%;
     height: 100%;
     vertical-align: middle;
@@ -25,21 +25,23 @@ const ResultCardBody = styled.div`
 
 const IconCol = styled(Col)`
     color: black;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
     margin-right: 0.3rem;
 `
 
 const Title = styled.h4`
     color: black;
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: lighter;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-bottom: 0rem;
+    margin-left: 0.3rem;
 `
 
 const ReleaseDate = styled(Title)`
     font-size: 0.8rem;
-    margin-left: 0.3rem;
+    margin-left: 0.4rem;
+    margin-bottom: 0rem;
 `
 
 export default class ResultCard extends React.Component {
@@ -62,7 +64,7 @@ export default class ResultCard extends React.Component {
                 <ResultCardBody> 
                     <Row>
                         <IconCol>
-                            <i class='material-icons' style={{fontSize: 40}}>movie</i>
+                            <i class='material-icons' style={{fontSize: 24}}>movie</i>
                         </IconCol>
                         <Col>
                             <Row>
