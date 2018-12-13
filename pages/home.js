@@ -7,47 +7,34 @@ import styled from 'styled-components'
 import data from '../characters.json'
 import ResultCard from '../components/ResultCard'
 
-const colors = {
-    lightCoffee: '#dfd9d3',
-    coffee: '#bfb3a8',
-    darkCoffee: '#907a67'
-}
-
 const Container = styled.div`
     margin: 0 auto;
 `
 
-const CharacterCard = styled.div`
-    background-color: ${colors.coffee};
-    border-radius: 10rem;
-    height: 5rem;
-    margin-top: 2rem;
-    opacity: 0.8;
-    padding: 2rem;
+const Title = styled.h1`
+    margin-bottom: 2rem;
     text-align: center;
-    vertical-align: middle;
-    width: 5rem;
-
-    &:hover {
-        color: ${colors.darkCoffee};
-        cursor: pointer;
-        opacity: 1;
-    }
 `
 
 const Name = styled.p`
-    color: gray;
+    border-bottom: ${props => props.isCurrentCharacter ? '1px solid black' : 'none'};
+    color: ${props => props.isCurrentCharacter ? 'black' : 'gray'};
     font-size: 1.2rem;
-    margin-top: 1.2rem;
-    opacity: 1;
+    padding-bottom: 0.3em;
+    text-align: center;
+    vertical-align: middle;
 
-    ${CharacterCard}:hover & {
-        color: gray;
+    &:hover {
+        color: black;
+        cursor: pointer;
+        border-bottom: 1px solid black;
     }
 `
 
 const Theme = styled(Grid)`
     font-family: 'NeueHaasUnicaPro-Regular';
+    padding: 5rem;
+    padding-top: 1rem;
 `
 
 export default class Home extends Component {
@@ -59,7 +46,7 @@ export default class Home extends Component {
         }
     }
 
-    handleCharacterCardClick = (name, reqUrl) => {
+    handleCharacterNameClick = (name, reqUrl) => {
         this.setState({
             films: [],
             selectedCharacter: name
@@ -87,38 +74,38 @@ export default class Home extends Component {
     
     render () {
         // console.log('data: ', data.characters)
-        const { handleCharacterCardClick } = this
+        const { handleCharacterNameClick } = this
         const { films } = this.state
         return (
             <Container>
                 <Theme>
-                    <Row center='xs'>
-                        <Col xs={3}>
-                            <Row>
-                            { data.characters.map((char, i) => {
-                                return (
+                    <Title> characters and films </Title>
+                    <Row start='xs'>
+                    { data.characters.map((char, i) => {
+                        return (
+                            <Col key={i} xs={12} sm={6} md={3}>
+                                <Name 
+                                    isCurrentCharacter={char.name===this.state.selectedCharacter}
+                                    onClick={() => handleCharacterNameClick(char.name, char.url)}>
+                                    {char.name} 
+                                </Name>    
+                            </Col>
+                        )
+                    })}
+                    </Row>
+                    <Row start='xs'>
+                        <Col xsOffset={1}>
+                        { films.map((film, i) => {
+                            return (
+                                <Row>
                                     <Col key={i}>
-                                        <CharacterCard onClick={() => handleCharacterCardClick(char.name, char.url)}>
-                                            <Name> {char.name} </Name>
-                                        </CharacterCard>
-                                            
+                                        <ResultCard
+                                            film={film}
+                                        />
                                     </Col>
-                                )
-                            })}
-                            </Row>
-                        </Col>
-                        <Col xs={9}>
-                            <Row>
-                                { films.map((film, i) => {
-                                    return (
-                                        <Col key={i}>
-                                            <ResultCard
-                                                film={film}
-                                            />
-                                        </Col>
-                                    )
-                                })}
-                            </Row>
+                                </Row>
+                            )
+                        })}
                         </Col>
                     </Row>
                 </Theme>

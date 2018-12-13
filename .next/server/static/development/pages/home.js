@@ -120,6 +120,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-styled-flexboxgrid */ "react-styled-flexboxgrid");
+/* harmony import */ var react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/gracieliu-fang/Code/amex/components/ResultCard.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -140,8 +142,18 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 0.8rem;\n    margin-left: 0.3rem;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    font-size: 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n    color: black;\n    font-size: 2rem;\n    font-weight: lighter;\n    margin-top: 1rem;\n    margin-bottom: 0rem;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -151,7 +163,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    color: gray;\n    font-size: 1.5rem;\n    text-align: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n    color: black;\n    margin-top: 0.8rem;\n    margin-right: 0.3rem;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -161,7 +173,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    border: 1px solid lightgray;\n    border-radius: 0.2rem;\n    padding: 1rem;\n    width: 100%;\n    height: 100%;\n    vertical-align: middle;\n"]);
+  var data = _taggedTemplateLiteral(["\n    border-bottom: 1px solid lightgray;\n    border-radius: 0.2rem;\n    padding: 1.5rem;\n    width: 100%;\n    height: 100%;\n    vertical-align: middle;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -171,7 +183,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    width: 10rem;\n    height: 10rem;\n    margin: 2rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 30rem;\n    height: 5rem;\n    margin: 2rem;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -186,6 +198,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var colors = {
   lightCoffee: '#dfd9d3',
   coffee: '#bfb3a8',
@@ -193,8 +206,9 @@ var colors = {
 };
 var ResultCardContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div(_templateObject());
 var ResultCardBody = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div(_templateObject2());
-var Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h4(_templateObject3());
-var ReleaseDate = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Title)(_templateObject4());
+var IconCol = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Col"])(_templateObject3());
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h4(_templateObject4());
+var ReleaseDate = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Title)(_templateObject5());
 
 var ResultCard =
 /*#__PURE__*/
@@ -222,28 +236,76 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ResultCardContainer, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 60
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ResultCardBody, {
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("link", {
+        href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+        rel: "stylesheet",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 61
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ResultCardBody, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(IconCol, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("i", {
+        class: "material-icons",
+        style: {
+          fontSize: 40
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65
+        },
+        __self: this
+      }, "movie")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 69
         },
         __self: this
-      }, " ", film.title, " "), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ReleaseDate, {
+      }, " ", film.title, " ")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_3__["Row"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 71
         },
         __self: this
-      }, " ", dateString, " ")));
+      }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ReleaseDate, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }, " Release: ", dateString, " "))))));
     }
   }]);
 
@@ -318,7 +380,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    font-family: 'NeueHaasUnicaPro-Regular';\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-family: 'NeueHaasUnicaPro-Regular';\n    padding: 5rem;\n    padding-top: 1rem;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -328,7 +390,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    color: gray;\n    font-size: 1.2rem;\n    margin-top: 1.2rem;\n    opacity: 1;\n\n    ", ":hover & {\n        color: gray;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    border-bottom: ", ";\n    color: ", ";\n    font-size: 1.2rem;\n    padding-bottom: 0.3em;\n    text-align: center;\n    vertical-align: middle;\n\n    &:hover {\n        color: black;\n        cursor: pointer;\n        border-bottom: 1px solid black;\n    }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -338,7 +400,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    background-color: ", ";\n    border-radius: 10rem;\n    height: 5rem;\n    margin-top: 2rem;\n    opacity: 0.8;\n    padding: 2rem;\n    text-align: center;\n    vertical-align: middle;\n    width: 5rem;\n\n    &:hover {\n        color: ", ";\n        cursor: pointer;\n        opacity: 1;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    margin-bottom: 2rem;\n    text-align: center;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -367,14 +429,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var colors = {
-  lightCoffee: '#dfd9d3',
-  coffee: '#bfb3a8',
-  darkCoffee: '#907a67'
-};
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div(_templateObject());
-var CharacterCard = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div(_templateObject2(), colors.coffee, colors.darkCoffee);
-var Name = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.p(_templateObject3(), CharacterCard);
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h1(_templateObject2());
+var Name = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.p(_templateObject3(), function (props) {
+  return props.isCurrentCharacter ? '1px solid black' : 'none';
+}, function (props) {
+  return props.isCurrentCharacter ? 'black' : 'gray';
+});
 var Theme = styled_components__WEBPACK_IMPORTED_MODULE_3___default()(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Grid"])(_templateObject4());
 
 var Home =
@@ -389,7 +450,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleCharacterCardClick", function (name, reqUrl) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleCharacterNameClick", function (name, reqUrl) {
       _this.setState({
         films: [],
         selectedCharacter: name
@@ -449,95 +510,95 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       // console.log('data: ', data.characters)
-      var handleCharacterCardClick = this.handleCharacterCardClick;
+      var handleCharacterNameClick = this.handleCharacterNameClick;
       var films = this.state.films;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 80
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Theme, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 81
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
-        center: "xs",
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 82
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-        xs: 3,
+      }, " characters and films "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        start: "xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 83
         },
         __self: this
       }, _characters_json__WEBPACK_IMPORTED_MODULE_4__.characters.map(function (char, i) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
           key: i,
+          xs: 12,
+          sm: 6,
+          md: 3,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Name, {
+          isCurrentCharacter: char.name === _this3.state.selectedCharacter,
+          onClick: function onClick() {
+            return handleCharacterNameClick(char.name, char.url);
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87
+          },
+          __self: this
+        }, char.name));
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
+        start: "xs",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        xsOffset: 1,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, films.map(function (film, i) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 100
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CharacterCard, {
-          onClick: function onClick() {
-            return handleCharacterCardClick(char.name, char.url);
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 101
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Name, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 102
-          },
-          __self: this
-        }, " ", char.name, " ")));
-      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-        xs: 9,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 110
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111
-        },
-        __self: this
-      }, films.map(function (film, i) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
           key: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 101
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_ResultCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
           film: film,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 102
           },
           __self: this
-        }));
-      }))))));
+        })));
+      })))));
     }
   }]);
 

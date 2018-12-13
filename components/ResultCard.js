@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import React from 'react'
+import { Row, Col } from 'react-styled-flexboxgrid'
 
 const colors = {
     lightCoffee: '#dfd9d3',
@@ -9,27 +10,36 @@ const colors = {
     darkCoffee: '#907a67'
 }
 const ResultCardContainer = styled.div`
-    width: 10rem;
-    height: 10rem;
+    width: 30rem;
+    height: 5rem;
     margin: 2rem;
 `
 const ResultCardBody = styled.div`
-    border: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
     border-radius: 0.2rem;
-    padding: 1rem;
+    padding: 1.5rem;
     width: 100%;
     height: 100%;
     vertical-align: middle;
 `
 
+const IconCol = styled(Col)`
+    color: black;
+    margin-top: 0.8rem;
+    margin-right: 0.3rem;
+`
+
 const Title = styled.h4`
-    color: gray;
-    font-size: 1.5rem;
-    text-align: center;
+    color: black;
+    font-size: 2rem;
+    font-weight: lighter;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
 `
 
 const ReleaseDate = styled(Title)`
-    font-size: 1rem;
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
 `
 
 export default class ResultCard extends React.Component {
@@ -48,9 +58,21 @@ export default class ResultCard extends React.Component {
         const dateString = `${dayOfWeek}, ${month} ${day} ${year}`
         return (
             <ResultCardContainer>
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                 <ResultCardBody> 
-                    <Title> {film.title} </Title>
-                    <ReleaseDate> {dateString} </ReleaseDate>
+                    <Row>
+                        <IconCol>
+                            <i class='material-icons' style={{fontSize: 40}}>movie</i>
+                        </IconCol>
+                        <Col>
+                            <Row>
+                                <Title> {film.title} </Title>
+                            </Row>
+                            <Row>
+                                <ReleaseDate> Release: {dateString} </ReleaseDate>
+                            </Row>
+                        </Col>
+                    </Row>
                 </ResultCardBody>
             </ResultCardContainer>
         )
