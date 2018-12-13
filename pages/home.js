@@ -38,6 +38,11 @@ const Theme = styled(Grid)`
     padding-top: 1rem;
 `
 
+const EmptyState = styled.p`
+    font-size: 1.2rem;
+    margin: 5rem;
+`
+
 export default class Home extends Component {
     constructor(props) {
         super(props)
@@ -60,7 +65,16 @@ export default class Home extends Component {
 
     async fetchFilms (reqUrl) {
         fetch(reqUrl)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                this.setState({
+                    status: 'SETTLED'
+                })
+                throw Error(res.status)
+            } else {
+                return res.json()
+            }
+        })
         .then(data => {
             const filmUrls = data.films
             filmUrls && filmUrls.map(url => {
@@ -73,6 +87,8 @@ export default class Home extends Component {
                     })
                 })
             })
+        }).catch(error => {
+            console.log(error)
         })
     }
     
@@ -99,17 +115,25 @@ export default class Home extends Component {
                     </Row>
                     <Row start='xs'>
                         <Col xsOffset={1}>
-                        { films && status==='SETTLED' && films.map((film, i) => {
+                        { films.length > 0
+                        ? status==='SETTLED' && films.map((film, i) => {
                             return (
-                                <Row>
-                                    <Col key={i}>
+                                <Row key={i}>
+                                    <Col>
                                         <ResultCard
                                             film={film}
                                         />
                                     </Col>
                                 </Row>
                             )
-                        })}
+                        })
+                        : status==='SETTLED' && selectedCharacter &&
+                            <Row>
+                                <Col>
+                                    <EmptyState> Sorry, there is an error or this character is not in any films. </EmptyState> 
+                                </Col>
+                            </Row>
+                        }
                         </Col>
                     </Row>
                 </Theme>

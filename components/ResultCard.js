@@ -64,7 +64,7 @@ export default class ResultCard extends React.Component {
                 <ResultCardBody> 
                     <Row>
                         <IconCol>
-                            <i class='material-icons' style={{fontSize: 24}}>movie</i>
+                            <i className='material-icons' style={{fontSize: 24}}>movie</i>
                         </IconCol>
                         <Col>
                             <Row>
