@@ -18,17 +18,27 @@ const Title = styled.h1`
 `
 
 const Name = styled.p`
-    border-bottom: ${props => props.isCurrentCharacter ? '1px solid black' : 'none'};
     color: ${props => props.isCurrentCharacter ? 'black' : 'gray'};
     font-size: 1.2rem;
-    padding-bottom: 0.3em;
+    margin-bottom: 0.2em;
     text-align: center;
     vertical-align: middle;
 
     &:hover {
+        transition: color 4s easein;
+        transition: border 2s ease;
         color: black;
         cursor: pointer;
-        border-bottom: 1px solid black;
+    }
+`
+
+const NameUnderline = styled.hr`
+    border-top: 1px solid black;
+    width: ${props => props.isCurrentCharacter ? '200px' : '0px'};
+    transition: width 0.5s;
+
+    ${Name}:hover & {
+        width: 200px;
     }
 `
 
@@ -36,6 +46,10 @@ const Theme = styled(Grid)`
     font-family: 'NeueHaasUnicaPro-Regular';
     padding: 5rem;
     padding-top: 1rem;
+`
+
+const MarginedRow = styled(Row)`
+    margin-bottom: 2rem;
 `
 
 const EmptyState = styled.p`
@@ -93,14 +107,13 @@ export default class Home extends Component {
     }
     
     render () {
-        // console.log('data: ', data.characters)
         const { handleCharacterNameClick } = this
         const { films, status, selectedCharacter } = this.state
         return (
             <Container>
                 <Theme>
                     <Title> characters and films </Title>
-                    <Row start='xs'>
+                    <MarginedRow start='xs'>
                     { data.characters.map((char, i) => {
                         return (
                             <Col key={i} xs={12} sm={6} md={3}>
@@ -108,11 +121,12 @@ export default class Home extends Component {
                                     isCurrentCharacter={char.name===selectedCharacter}
                                     onClick={() => handleCharacterNameClick(char.name, char.url)}>
                                     {char.name} 
-                                </Name>    
+                                    <NameUnderline isCurrentCharacter={char.name===selectedCharacter}/>  
+                                </Name>
                             </Col>
                         )
                     })}
-                    </Row>
+                    </MarginedRow>
                     <Row start='xs'>
                         <Col xsOffset={1}>
                         { films.length > 0

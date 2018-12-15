@@ -4,50 +4,64 @@ import styled from 'styled-components'
 import React from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 
-const colors = {
-    lightCoffee: '#dfd9d3',
-    coffee: '#bfb3a8',
-    darkCoffee: '#907a67'
-}
 const ResultCardContainer = styled.div`
-    width: 30rem;
-    height: 3rem;
-    margin: 2rem;
+    width: 100%;
+    height: 100%;
+    margin-top: 1rem;
 `
 const ResultCardBody = styled.div`
     border-bottom: 1px solid lightgray;
-    border-radius: 0.2rem;
-    padding: 1rem;
+    padding: 0.5rem;
     width: 100%;
-    height: 100%;
-    vertical-align: middle;
 `
 
-const IconCol = styled(Col)`
-    color: black;
-    margin-top: 0.5rem;
-    margin-right: 0.3rem;
+const MarginedRow = styled(Row)`
+    // margin-top: 0.5rem;
 `
 
 const Title = styled.h4`
     color: black;
     font-size: 1.3rem;
     font-weight: lighter;
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
     margin-bottom: 0rem;
-    margin-left: 0.3rem;
+    margin-left: 1rem;
 `
 
 const ReleaseDate = styled(Title)`
+    color: gray;
     font-size: 0.8rem;
-    margin-left: 0.4rem;
-    margin-bottom: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 0.6rem;
+    margin-left: 3.7rem;
+`
+
+const Description = styled(ReleaseDate)`
+    color: black;
+    display: none;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    width: 40rem;
 `
 
 export default class ResultCard extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            viewDescription: true
+        }
+    }
+
+    toggleDescription = () => {
+        this.setState({
+            viewDescription: !this.state.viewDescription
+        })
+    }
 
     render () {
         const { film } = this.props
+        const { toggleDescription } = this
+        const { viewDescription } = this.state
         const months = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
         ];
@@ -63,15 +77,17 @@ export default class ResultCard extends React.Component {
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                 <ResultCardBody> 
                     <Row>
-                        <IconCol>
-                            <i className='material-icons' style={{fontSize: 24}}>movie</i>
-                        </IconCol>
                         <Col>
-                            <Row>
+                            <MarginedRow>
+                                <i className='material-icons' style={{fontSize: 40}}>movie</i>
                                 <Title> {film.title} </Title>
-                            </Row>
+                            </MarginedRow>
                             <Row>
                                 <ReleaseDate> Release: {dateString} </ReleaseDate>
+                            </Row>
+                            <Row>
+                                <Description onClick={toggleDescription}>+ here</Description>
+                                {/* { viewDescription && <Description> {film.opening_crawl} </Description> } */}
                             </Row>
                         </Col>
                     </Row>
