@@ -33,12 +33,13 @@ const Name = styled.p`
 `
 
 const NameUnderline = styled.hr`
-    border-top: 1px solid black;
+    border-top: ${props => props.isCurrentCharacter ? '1px solid black' : 'none'};
     width: ${props => props.isCurrentCharacter ? '200px' : '0px'};
     transition: width 0.5s;
 
     ${Name}:hover & {
         width: 200px;
+        border-top: 1px solid black;
     }
 `
 

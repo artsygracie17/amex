@@ -440,7 +440,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    border-top: 1px solid black;\n    width: ", ";\n    transition: width 0.5s;\n\n    ", ":hover & {\n        width: 200px;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    border-top: ", ";\n    width: ", ";\n    transition: width 0.5s;\n\n    ", ":hover & {\n        width: 200px;\n        border-top: 1px solid black;\n    }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -495,6 +495,8 @@ var Name = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.p(_templateO
   return props.isCurrentCharacter ? 'black' : 'gray';
 });
 var NameUnderline = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.hr(_templateObject4(), function (props) {
+  return props.isCurrentCharacter ? '1px solid black' : 'none';
+}, function (props) {
   return props.isCurrentCharacter ? '200px' : '0px';
 }, Name);
 var Theme = styled_components__WEBPACK_IMPORTED_MODULE_3___default()(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Grid"])(_templateObject5());
@@ -594,26 +596,26 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113
+          lineNumber: 114
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Theme, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 115
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 116
         },
         __self: this
       }, " characters and films "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MarginedRow, {
         start: "xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 117
         },
         __self: this
       }, _characters_json__WEBPACK_IMPORTED_MODULE_4__.characters.map(function (char, i) {
@@ -624,7 +626,7 @@ function (_Component) {
           md: 3,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 119
+            lineNumber: 120
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Name, {
@@ -634,14 +636,14 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 121
           },
           __self: this
         }, char.name, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(NameUnderline, {
           isCurrentCharacter: char.name === selectedCharacter,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 125
           },
           __self: this
         })));
@@ -649,14 +651,14 @@ function (_Component) {
         start: "xs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 131
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         xsOffset: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 132
         },
         __self: this
       }, films.length > 0 ? status === 'SETTLED' && films.map(function (film, i) {
@@ -664,39 +666,39 @@ function (_Component) {
           key: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 135
+            lineNumber: 136
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 136
+            lineNumber: 137
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_ResultCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
           film: film,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 137
+            lineNumber: 138
           },
           __self: this
         })));
       }) : status === 'SETTLED' && selectedCharacter && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Row"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 146
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_styled_flexboxgrid__WEBPACK_IMPORTED_MODULE_2__["Col"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 147
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(EmptyState, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 148
         },
         __self: this
       }, " Sorry, there is an error or this character is not in any films. ")))))));
