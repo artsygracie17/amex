@@ -68,6 +68,18 @@ export default class Home extends Component {
         }
     }
 
+    alphabetizeFilms = (films) => {
+        const sortedFilms = films.sort((a, b) => {
+            if (a.title < b.title) { return -1 }
+            if (a.title > b.title) { return 1 }
+            return 0
+        })
+        this.setState({
+            films: sortedFilms,
+            status: 'SETTLED'
+        })
+    }
+
     handleCharacterNameClick = (name, reqUrl) => {
         this.setState({
             films: [],
@@ -98,9 +110,9 @@ export default class Home extends Component {
                 .then(filmData => {
                     this.setState({
                         films: [...this.state.films, filmData],
-                        status: 'SETTLED'
                     })
-                })
+                    return this.state.films
+                }).then(films => this.alphabetizeFilms(films))
             })
         }).catch(error => {
             console.log(error)
@@ -110,6 +122,7 @@ export default class Home extends Component {
     render () {
         const { handleCharacterNameClick } = this
         const { films, status, selectedCharacter } = this.state
+
         return (
             <Container>
                 <Theme>
